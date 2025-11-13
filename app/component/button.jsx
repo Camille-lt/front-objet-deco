@@ -7,13 +7,14 @@ export default function Button({ onClick, children, style = {} }) {
      type="button"
      onClick={onClick}
      style={{
-       padding: '10px 20px',
-       backgroundColor: '#416D6C',
-       color: 'white',
+       padding: '5px 15px',
+      //  backgroundColor: '#E4DCD2',
+       color: 'black',
        border: 'none',
-       borderRadius: '56px',
+      //  fontWeight:'800',
+      //  borderRadius: '11px',
        cursor: 'pointer',
-       marginTop: '1.5rem',
+
        ...style, // Permet de changer le style de certains buttons
      }}
    >
