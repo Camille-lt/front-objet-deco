@@ -9,7 +9,7 @@ export default function Button({ onClick, children, style = {} }) {
      style={{
        padding: '5px 15px',
       //  backgroundColor: '#E4DCD2',
-       color: 'black',
+       color: '#FFFFFF',
        border: 'none',
       //  fontWeight:'800',
       //  borderRadius: '11px',

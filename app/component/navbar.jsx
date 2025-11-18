@@ -21,8 +21,8 @@ export default function Navbar() {
     <nav
       style={{
         padding: "1rem",
-        backgroundColor: "#9e9182",
-        color: "whitesmoke",
+        backgroundColor: "#F6F6F6",
+        color: "#565450",
       }}
     >
       {/* 🔹 Structure principale : logo - menu - bouton */}
@@ -30,11 +30,12 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          fontFamily:"Oswald",
         }}>
         {/* 🔹 1️⃣ Logo à gauche */}
         <div>
-          <Link href="/" style={{ textDecoration: "none", color: "whitesmoke", fontWeight: "bold", fontSize: "1.2rem" }}>
-            O.déco
+          <Link href="/" style={{  display:'flex', textDecoration: "none", color: "whitesmoke", fontWeight: "bold", fontSize: "1.5rem", paddingLeft: '1rem' }}>
+            M.
           </Link>
         </div>
 
@@ -70,6 +71,7 @@ export default function Navbar() {
                 gap: "3rem",
                 margin: 0,
                 padding: 0,
+                fontFamily: "Oswald",
               }}
             >
               <li><Link href="/">Accueil</Link></li>
@@ -81,9 +83,9 @@ export default function Navbar() {
 
         {/* 🔹 3️⃣ Bouton à droite */}
         {/* <div style={{ color: 'black', backgroundColor: '#E4DCD2', borderRadius: '11px',fontWeight: '800'}}></div> */}
-        <div style={{ color: 'black', fontWeight: '800'}}>
+        <div style={{ color: '#FFFFF', backgroundColor: "#C8C5BF", fontWeight: '400', fontFamily: "Oswald", fontSize: " 1rem" }}>
           <Button onClick={() => console.log("Connexion clic !")}>
-            Connexion
+            ESPACE CLIENT
           </Button>
         </div>
       </div>
@@ -98,7 +100,7 @@ export default function Navbar() {
             width: "100vw",
             height: "100vh",
             backgroundColor: "#fff",
-            color: "black",
+            color: "#FFFFFF",
             zIndex: 1000,
             display: "flex",
             flexDirection: "column",
@@ -142,7 +144,7 @@ export default function Navbar() {
 
           {/* 🔹 Bouton aussi dans le menu mobile */}
           <div style={{ marginTop: "3rem" }}>
-            <Button onClick={() => setIsOpen(false)}>Connexion</Button>
+            <Button onClick={() => setIsOpen(false)}>ESPACE CLIENT</Button>
           </div>
         </div>
       )}
