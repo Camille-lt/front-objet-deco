@@ -10,8 +10,8 @@
   --color-foreground: var(--foreground);
 
   /* 🔥 AJOUT ICI : tes variables de polices */
-  --font-heading: var(--font-cinzel);
-  --font-body: var(--font-oswald);
+  --font-heading: var(--font-inter);
+  --font-body: var(--font-playfair-display);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

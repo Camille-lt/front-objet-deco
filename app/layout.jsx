@@ -1,26 +1,34 @@
-import { Cinzel, Oswald } from 'next/font/google'
+import { Nunito_Sans } from 'next/font/google'; // Playfair_Display retiré
 import "./globals.css";
-import Navbar from "./component/navbar";
+import Navbar from "../component/navbar";
+import Footer from "../component/footer";
 
-const cinzel = Cinzel({ 
+// Déclarations des polices
+// Playfair Display retiré
+
+// 2. Nunito Sans (Utilisé pour TOUT)
+const nunito = Nunito_Sans({ 
   subsets: ['latin'],
-  variable: '--font-cinzel',
-  weight: ['400', '500', '600', '700']
+  variable: '--font-nunito',
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap'
 });
 
-const oswald = Oswald({ 
-  subsets: ['latin'],
-  variable: '--font-oswald',
-  weight: ['300', '400', '500', '600', '700']
-});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
-      <body className={`${cinzel.variable} ${oswald.variable} antialiased`}>
+    // Application de la variable Nunito uniquement
+    <html 
+      lang="fr" 
+      className={nunito.variable} // Playfair.variable retiré
+    >
+      
+      {/* Utilisation de la police Nunito par défaut pour le corps du texte (font-sans) */}
+      <body className={`font-sans antialiased`}> 
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
-}
+};
