@@ -17,11 +17,11 @@ export default function Valeurs() {
     {/* NOUVEAU CONTENEUR pour centrer le TITRE et le PARAGRAPHE ensemble */}
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
         {/* Titre : classes de positionnement absolu retirées */}
-        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-widest mb-4">
+        <h1 className="font-heading font-extrabold text-[#E4B969] text-[3rem] text-center tracking-widest mb-4">
           TROUVEZ VOTRE STYLE ET VOS AMBIANCES
         </h1>
         {/* Paragraphe : classes de positionnement absolu retirées */}
-        <p className="underline decoration-1 font-heading font-semibold text-[#E4B969] text-[1.5rem] text-center tracking-wider">
+        <p className="underline decoration-1 font-heading font-bold text-[#E4B969] text-[1.5rem] text-center tracking-wider">
             POUR UN CHEZ VOUS QUI VOUS RESSEMBLE
         </p>
     </div>
@@ -38,17 +38,17 @@ export default function Valeurs() {
     {/* NOUVEAU CONTENEUR pour centrer le TITRE et le PARAGRAPHE ensemble */}
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
         {/* Titre : classes de positionnement absolu retirées */}
-        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-widest  mb-4">
+        <h1 className="font-heading font-extrabold text-[#E4B969] text-[2.5rem] text-center tracking-widest  mb-4">
           NOTRE SELECTION JUSQU'À -50% PAR STYLES
         </h1>
         {/* Paragraphe : classes de positionnement absolu retirées */}
-        <p className="underline decoration-1 font-heading font-medium text-[#E4B969] text-[1.5rem] text-center tracking-wider">
+        <p className="underline decoration-1 font-heading font-bold text-[#E4B969] text-[1.5rem] text-center tracking-wider">
             DÉCOUVREZ NOS MOBILIERS ICI
         </p>
     </div>
 </div>
 {/* button filtrage */}
-<div className="flex justify-center my-16">
+<div className="flex justify-center py-16">
     <FilterToggle />
 </div>
 
@@ -63,7 +63,7 @@ export default function Valeurs() {
     pour composer un espace qui vous ressemble vraiment.
   </p>
 </div>
-<div className="text-center p-10">
+<div className="text-center p-10 pb-20">
   <p className="underline decoration-1 text-[#8A8781] text-[1.5rem] pb-10">
     Découvrez nos engagements
   </p>

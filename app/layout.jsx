@@ -10,7 +10,6 @@ import Footer from "../component/footer";
 const nunito = Nunito_Sans({ 
   subsets: ['latin'],
   variable: '--font-nunito',
-  weight: ['300', '400', '500', '600', '700'],
   display: 'swap'
 });
 

@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import { Truck, MessageCircleMore, UserRound, MailOpen, WalletCards  } from 'lucide-react';
 
 export default function Footer() {
     // Couleurs basées sur le thème
@@ -11,7 +12,7 @@ export default function Footer() {
     const newsletterButtonClasses = "bg-gray-800 text-white font-bold p-3 rounded-sm hover:bg-gray-700 transition-colors text-sm w-full";
 
     return (
-        <footer className={`w-full ${bgColor} ${textColor}`}>
+        <footer className={`w-full ${bgColor} ${textColor} font-sans`}>
             
             {/* 1. Section Principale : Liens et Newsletter */}
             <div className="border-t border-gray-300 pl-10 pr-10  mx-auto  py-10">
@@ -20,14 +21,18 @@ export default function Footer() {
                     
                     {/* Colonne 1: LIVRAISON & PAIEMENT (lg:col-span-1) */}
                     <div className="lg:col-span-1 space-y-4">
-                        <h4 className="font-bold text-sm mb-3 uppercase">
+                        <div className="mb-1">
+                          <Truck className="h-6 w-6" /> 
+                         </div>
+                        <h4 className="font-extrabold text-sm mb-3 uppercase">
                          LIVRAISON RAPIDE
                         </h4>
                         <p className="text-sm">En 3 à 5 jours ouvrables*</p>
                         
-                        <h4 className="font-bold text-sm pt-4 uppercase">
+                        <h4 className="font-extrabold text-sm pt-4 uppercase mb-2">
                          PAIEMENT SÉCURISÉ
                         </h4>
+                            <WalletCards /> 
                         <div className="text-xl pt-1">
                             {/* Icône de carte (simulée) */}
                         </div>
@@ -35,28 +40,38 @@ export default function Footer() {
 
                     {/* Colonne 2: AIDE ET CONTACT (lg:col-span-1) */}
                     <div className="lg:col-span-1 space-y-2">
-                        <h4 className="font-bold text-sm mb-3 uppercase">AIDE ET CONTACT</h4>
+                        <div className="mb-01">
+                        <MessageCircleMore className="h-5 w-5" />
+                        </div>
+                        <h4 className="font-extrabold text-sm mb-3 uppercase">AIDE ET CONTACT</h4>
                         <Link href="/retours" className={linkClasses}>Retours</Link>
                         <Link href="/contact" className={linkClasses}>Contactez-nous</Link>
                     </div>
 
                     {/* Colonne 3: VOTRE COMPTE + NOS VALEURS (lg:col-span-1) */}
                     <div className="lg:col-span-1 space-y-2">
-                        <h4 className="font-bold text-sm mb-3 uppercase">VOTRE COMPTE</h4>
+                      <div className="mb-1">
+                            <UserRound className="h-6 w-6" />
+                        </div>
+                        <h4 className="font-extrabold text-sm mb-3 uppercase">VOTRE COMPTE</h4>
                         <Link href="/giftcard" className={linkClasses}>Carte Cadeau</Link>
                         <Link href="/signup" className={linkClasses}>S'inscrire</Link>
                         <Link href="/login" className={linkClasses}>Se connecter</Link>
                         
                         {/* Ajout du lien Nos Valeurs sous le compte, comme dans la requête */}
                         <div className="pt-4">
-                            <h4 className="font-bold text-sm mb-3 uppercase">Nos valeurs</h4>
+                            <h4 className="font-extrabold text-sm mb-3 uppercase">Nos valeurs</h4>
                             <Link href="/valeurs" className={linkClasses}>Découvrez notre manifeste</Link>
                         </div>
                     </div>
 
                     {/* Colonne 4/5: NEWSLETTER (lg:col-span-2) */}
                     <div className="lg:col-span-2">
-                        <h4 className="font-bold text-sm mb-3 uppercase">S'abonner à la newsletter</h4>
+                      <div className="pb-2">
+                            <MailOpen className="h-5 w-5" />
+                        </div>
+
+                        <h4 className="font-extrabold text-sm mb-4 uppercase">S'abonner à la newsletter</h4>
                         <p className="text-sm mb-4">
                             Inscrivez-vous à notre newsletter, pour rester informé·e 
                             de nos dernières tendances en matières de décoration d'intérieur

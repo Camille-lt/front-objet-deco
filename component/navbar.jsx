@@ -9,6 +9,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
+      // 768px est l'équivalent de 'md' en Tailwind par défaut
       setIsMobile(window.innerWidth <= 768);
     };
 
@@ -18,72 +19,55 @@ export default function Navbar() {
   }, []);
 
   return (
+    // 🚨 CONVERSION TAILWIND 🚨
     <nav
-      className="nunito" // 🚨 Définit Nunito (font-sans) comme police principale pour la navbar
-      style={{
-        padding: "1rem",
-        backgroundColor: "#F6F6F6",
-        color: "#565450",
-      }}
+      className="font-sans py-4 bg-[#F6F6F6] text-[#565450] shadow-sm"
     >
-      {/* 🔹 Structure principale : logo - menu - bouton */}
-      <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}>
+      {/* 🔹 Structure principale : logo - menu - bouton (Centrée dans un conteneur) */}
+      <div className="mx-auto flex items-center justify-between px-4 md:px-6">
+        
         {/* 🔹 1️⃣ Logo à gauche */}
         <div>
-          <Link href="/" style={{  display:'flex', textDecoration: "none", color: "#565450", fontWeight: "bold", fontSize: "1.5rem", paddingLeft: '1rem' }}>
+          <Link 
+            href="/" 
+            className="flex text-[#565450] font-bold text-xl md:text-3xl tracking-wide"
+          >
             HOME MAKING
           </Link>
         </div>
 
         {/* 🔹 2️⃣ Centre : menu ou burger */}
-        <div>
+        <div className="flex">
           {isMobile ? (
             // 🔸 Burger sur mobile
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              style={{
-                fontSize: "1.5rem",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: 4,
-              }}
+              className="md:hidden p-2 text-xl border-none bg-transparent cursor-pointer flex flex-col items-center justify-center space-y-1.5"
             >
-              <div style={{ width: 25, height: 3, backgroundColor: "#333" }} />
-              <div style={{ width: 25, height: 3, backgroundColor: "#333" }} />
-              <div style={{ width: 25, height: 3, backgroundColor: "#333" }} />
+              <div className="w-6 h-0.5 bg-gray-800 rounded-full" />
+              <div className="w-6 h-0.5 bg-gray-800 rounded-full" />
+              <div className="w-6 h-0.5 bg-gray-800 rounded-full" />
             </button>
           ) : (
             // 🔸 Menu desktop
-            <ul
-              style={{
-                display: "flex",
-                listStyle: "none",
-                gap: "3rem",
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              <li><Link href="/">ACCUEIL</Link></li>
-              <li><Link href="/mobilier">CATALOGUE</Link></li>
-              <li><Link href="/inspirations">PRODUITS</Link></li>
-              <li><Link href="/valeurs">NOS VALEURS</Link></li>
+            <ul className="hidden md:flex  p-0 m-0 space-x-10 uppercase text-base font-semibold ">
+              {/* 🚨 CORRECTION SYNTAXE: Espace entre hover:text-[#E4B969] et transition-colors */}
+              <li><Link href="/" className="hover:text-[#E4B969] transition-colors">ACCUEIL</Link></li>
+              <li><Link href="/mobilier" className="hover:text-[#E4B969] transition-colors">CATALOGUE</Link></li>
+              <li><Link href="/inspirations" className="hover:text-[#E4B969] transition-colors">PRODUITS</Link></li>
+              <li><Link href="/valeurs" className="hover:text-[#E4B969] transition-colors">NOS VALEURS</Link></li>
             </ul>
           )}
         </div>
 
-        {/* 🔹 3️⃣ Bouton à droite */}
-        <div className="font-sans" style={{ color: '#FFFFF', backgroundColor: "#565450", fontWeight: '400', fontSize: " 1rem" }}>
-          <Button onClick={() => console.log("Connexion clic !")}>
+        {/* 🔹 3️⃣ Bouton à droite (visible sur desktop) */}
+        <div className="bg-[#565450] text-white  text-xlfont-medium rounded-lgtransition-color">
+          <Button 
+            onClick={() => console.log("Connexion clic !")}
+            className="rounded-lgtransition-color"
+            // Le composant Button doit accepter et appliquer 'className'
+          >
             ESPACE CLIENT
           </Button>
         </div>
@@ -92,50 +76,18 @@ export default function Navbar() {
       {/* 🔹 Menu mobile déroulant */}
       {isMobile && isOpen && (
         <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "#fff",
-            color: "#565450", // Changé à la couleur du texte de la navbar
-            zIndex: 1000,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="fixed inset-0 bg-white text-[#565450] z-50 flex flex-col items-center justify-center"
         >
+          {/* Bouton Fermer */}
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Fermer le menu"
-            style={{
-              position: "absolute",
-              top: "1rem",
-              right: "1rem",
-              fontSize: "2rem",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              color: "#333",
-            }}
+            className="absolute top-4 right-4 text-3xl p-2 border-none bg-transparent cursor-pointer text-gray-800"
           >
             &times;
           </button>
 
-          <ul
-            style={{
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-              display: "flex",
-              flexDirection: "column",
-              gap: "3.5rem",
-              fontSize: "1.4rem",
-              cursor: "pointer",
-            }}
-          >
+          <ul className="list-none p-0 m-0 flex flex-col gap-8 text-lg font-semibold uppercase">
             <li><Link href="/" onClick={() => setIsOpen(false)}>Accueil</Link></li>
             <li><Link href="/mobilier" onClick={() => setIsOpen(false)}>Catalogue</Link></li>
             <li><Link href="/produits" onClick={() => setIsOpen(false)}> Produits</Link></li>
@@ -143,8 +95,12 @@ export default function Navbar() {
           </ul>
 
           {/* 🔹 Bouton aussi dans le menu mobile */}
-          <div style={{ marginTop: "3rem" }}>
-            <Button onClick={() => setIsOpen(false)}>ESPACE CLIENT</Button>
+          <div className="">
+            <Button 
+              onClick={() => setIsOpen(false)}
+              className="bg-[#565450] text-white font-medium text-sm px-1 py-1 rounded-lg transition-color"> 
+              ESPACE CLIENT
+            </Button>
           </div>
         </div>
       )}
