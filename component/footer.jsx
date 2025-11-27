@@ -11,7 +11,7 @@ export default function Footer() {
     const newsletterButtonClasses = "bg-gray-800 text-white font-bold p-3 rounded-sm hover:bg-gray-700 transition-colors text-sm w-full";
 
     return (
-        <footer className={`w-full ${bgColor} ${textColor} --font-nunito`}>
+        <footer className={`w-full ${bgColor} ${textColor}`}>
             
             {/* 1. Section Principale : Liens et Newsletter */}
             <div className="border-t border-gray-300 pl-10 pr-10  mx-auto  py-10">
