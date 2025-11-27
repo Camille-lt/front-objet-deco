@@ -67,8 +67,8 @@ export default function Footer() {
 
                     {/* Colonne 4/5: NEWSLETTER (lg:col-span-2) */}
                     <div className="lg:col-span-2">
-                      <div className="pb-2">
-                            <MailOpen className="h-5 w-5" />
+                      <div className="pb-1">
+                            <MailOpen className="h-6 w-6" />
                         </div>
 
                         <h4 className="font-extrabold text-sm mb-4 uppercase">S'abonner à la newsletter</h4>
