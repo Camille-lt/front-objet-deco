@@ -9,11 +9,12 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* 🔥 AJOUT ICI : tes variables de polices */
+  /* 🔥 CORRECTION : Pointer font-sans vers la variable de Nunito (définie dans layout.jsx) */
+  --font-sans: var(--font-nunito); 
+  
+  /* Laissez les autres variables si vous en avez besoin, mais elles ne seront pas utilisées par 'font-sans' */
   --font-heading: var(--font-inter);
-  --font-body: var(--font-playfair-display);
-
-  --font-sans: var(--font-geist-sans);
+  --font-body: var(--font-playfair-display); 
   --font-mono: var(--font-geist-mono);
 }
 
@@ -24,9 +25,12 @@
   }
 }
 
+/* 🚨 RÈGLE FINALE : Forcer la police sur le body pour assurer l'héritage */
 body {
   background: var(--background);
   color: var(--foreground);
+  /* Applique la police --font-nunito partout où aucune autre classe n'est spécifiée */
+  font-family: var(--font-nunito), sans-serif; 
 }
 
 .text-taupe {
