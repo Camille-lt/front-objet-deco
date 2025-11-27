@@ -17,11 +17,11 @@ export default function Valeurs() {
     {/* NOUVEAU CONTENEUR pour centrer le TITRE et le PARAGRAPHE ensemble */}
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
         {/* Titre : classes de positionnement absolu retirées */}
-        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-[0.2em] mb-4">
+        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-widest mb-4">
           TROUVEZ VOTRE STYLE ET VOS AMBIANCES
         </h1>
         {/* Paragraphe : classes de positionnement absolu retirées */}
-        <p className="font-heading font-medium text-[#E4B969] text-[1.5rem] text-center tracking-[0.2em]">
+        <p className="underline decoration-1 font-heading font-semibold text-[#E4B969] text-[1.5rem] text-center tracking-wider">
             POUR UN CHEZ VOUS QUI VOUS RESSEMBLE
         </p>
     </div>
@@ -38,11 +38,11 @@ export default function Valeurs() {
     {/* NOUVEAU CONTENEUR pour centrer le TITRE et le PARAGRAPHE ensemble */}
     <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
         {/* Titre : classes de positionnement absolu retirées */}
-        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-[0.2em] mb-4">
+        <h1 className="font-heading font-bold text-[#E4B969] text-[3rem] text-center tracking-widest  mb-4">
           NOTRE SELECTION JUSQU'À -50% PAR STYLES
         </h1>
         {/* Paragraphe : classes de positionnement absolu retirées */}
-        <p className="font-heading font-medium text-[#E4B969] text-[1.5rem] text-center tracking-[0.2em]">
+        <p className="underline decoration-1 font-heading font-medium text-[#E4B969] text-[1.5rem] text-center tracking-wider">
             DÉCOUVREZ NOS MOBILIERS ICI
         </p>
     </div>
@@ -56,7 +56,7 @@ export default function Valeurs() {
   <p className="underline decoration-1 text-[#8A8781] text-[1.5rem] pb-10">
     Voir tous nos mobiliers
   </p>
-  <p className="font-heading font-medium text-[#272726] text-[1.5rem] ">
+  <p className="font-heading font-bold text-[#272726] text-[1.5rem] ">
     HOME MAKING croit qu’un intérieur réussi se construit à votre image, petit à petit, <br />
     à partir des pièces que vous choisissez et des styles que vous aimez. <br />
     Chaque meuble, chaque objet peut se mêler à d’autres influences, <br />
