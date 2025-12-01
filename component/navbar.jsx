@@ -54,7 +54,7 @@ export default function Navbar() {
             <ul className="hidden md:flex  p-0 m-0 space-x-10 uppercase text-base font-semibold ">
               {/* 🚨 CORRECTION SYNTAXE: Espace entre hover:text-[#E4B969] et transition-colors */}
               <li><Link href="/" className="hover:text-[#E4B969] transition-colors">ACCUEIL</Link></li>
-              <li><Link href="/mobilier" className="hover:text-[#E4B969] transition-colors">CATALOGUE</Link></li>
+              <li><Link href="/catalogue" className="hover:text-[#E4B969] transition-colors">CATALOGUE</Link></li>
               <li><Link href="/inspirations" className="hover:text-[#E4B969] transition-colors">PRODUITS</Link></li>
               <li><Link href="/valeurs" className="hover:text-[#E4B969] transition-colors">NOS VALEURS</Link></li>
             </ul>
@@ -89,7 +89,7 @@ export default function Navbar() {
 
           <ul className="list-none p-0 m-0 flex flex-col gap-8 text-lg font-semibold uppercase">
             <li><Link href="/" onClick={() => setIsOpen(false)}>Accueil</Link></li>
-            <li><Link href="/mobilier" onClick={() => setIsOpen(false)}>Catalogue</Link></li>
+            <li><Link href="/catalogue" onClick={() => setIsOpen(false)}>Catalogue</Link></li>
             <li><Link href="/produits" onClick={() => setIsOpen(false)}> Produits</Link></li>
             <li><Link href="/valeurs" onClick={() => setIsOpen(false)}>Nos Valeurs</Link></li>
           </ul>
