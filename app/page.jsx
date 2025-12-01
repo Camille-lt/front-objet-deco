@@ -2,7 +2,10 @@
 import { useState, useEffect } from "react";
 import Button from "../component/button";
 import FilterToggle from "../component/FilterToggle";
-import ProduitsList from "@/component/produitsList";
+import ProduitsList from "../component/produitsList";
+import StylesList from "../component/StylesList";
+import { stylesData } from "../data/stylesData";
+import useInViewAnimation from '../hooks/useInViewAnimation';
 
 export default function HomePage() {
   const goldText = "text-[#E4B969]";
@@ -11,31 +14,23 @@ export default function HomePage() {
   const titleClasses = "font-extrabold text-[2.5rem] text-center tracking-widest mb-4 font-sans";
   const subTitleClasses = "underline decoration-1 font-bold text-[1.5rem] text-center tracking-wider font-sans";
 
-  // État pour gérer le toggle et les produits
   const [activeFilter, setActiveFilter] = useState("PRODUITS");
   const [produits, setProduits] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fonction pour choisir aléatoirement 15 produits
+  // Random products
   const getRandomProducts = (data, count = 15) => {
     const shuffled = [...data].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
   };
 
-  // Récupération des produits depuis l'API
   useEffect(() => {
     async function fetchProduits() {
       try {
         const res = await fetch("http://localhost:4000/api/produits");
         if (!res.ok) throw new Error("Erreur lors de la récupération des produits");
         const data = await res.json();
-
-        if (activeFilter === "PRODUITS") {
-          setProduits(getRandomProducts(data, 15));
-        } else {
-          // Pour STYLES, on pourra filtrer différemment
-          setProduits(data);
-        }
+        setProduits(activeFilter === "PRODUITS" ? getRandomProducts(data, 15) : data);
       } catch (err) {
         console.error(err);
       } finally {
@@ -50,45 +45,62 @@ export default function HomePage() {
     setLoading(true);
   };
 
+  // Hooks pour bannières
+  const banner1Ref = useInViewAnimation();
+  const banner2Ref = useInViewAnimation();
+
   return (
-    <main className="min-h-screen font-sans">
-      {/* Bannière 1 */}
-      <div className="w-full overflow-hidden relative">
-        <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.1.0"
-          alt="Bannière de salon"
-          className="w-full h-[90vh] object-cover object-[center_65%]"
-        />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-          <h1 className={`${goldText} ${titleClasses}`}>
-            TROUVEZ VOTRE STYLE ET VOS AMBIANCES
-          </h1>
-          <p className={`${goldText} ${subTitleClasses}`}>
-            POUR UN CHEZ VOUS QUI VOUS RESSEMBLE
-          </p>
-        </div>
-      </div>
+ <main className="min-h-screen font-sans">
 
-      {/* Bannière 2 */}
-      <div className="w-full overflow-hidden relative pt-10">
-        <img
-          src="https://images.unsplash.com/photo-1662781256805-3ac89ffbeae0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
-          alt="Bannière de promotion"
-          className="w-full h-[90vh] object-cover object-[center_65%]"
-        />
-        <div className="absolute inset-0 bg-black opacity-15"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-          <h1 className={`${goldText} ${titleClasses}`}>
-            NOTRE SELECTION JUSQU'À -50% PAR STYLES
-          </h1>
-          <p className={`${goldText} ${subTitleClasses}`}>
-            DÉCOUVREZ NOS MOBILIERS ICI
-          </p>
-        </div>
-      </div>
+  {/* Bannière 1 */}
+  <div className="w-full relative overflow-hidden h-[90vh]">
+    {/* Image statique */}
+    <img
+      src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.1.0"
+      alt="Bannière"
+      className="w-full h-full object-cover object-[center_65%]" // image statique
+    />
+    <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      {/* 🚨 FilterToggle et ProduitsList */}
+    {/* Texte centré et animé */}
+    <div
+      ref={banner1Ref} // ref uniquement sur le texte
+      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center p-4"
+    >
+      <h1 className={`${goldText} ${titleClasses} animate-slideInFromBottom`}>
+        TROUVEZ VOTRE STYLE ET VOS AMBIANCES
+      </h1>
+      <p className={`${goldText} ${subTitleClasses} animate-slideInFromBottom delay-200`}>
+        POUR UN CHEZ VOUS QUI VOUS RESSEMBLE
+      </p>
+    </div>
+  </div>
+
+  {/* Bannière 2 */}
+  <div className="w-full relative overflow-hidden h-[90vh] pt-10">
+    {/* Image statique */}
+    <img
+      src="https://images.unsplash.com/photo-1662781256805-3ac89ffbeae0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+      alt="Bannière de promotion"
+      className="w-full h-full object-cover object-[center_65%]" // image statique
+    />
+    <div className="absolute inset-0 bg-black opacity-15"></div>
+
+    {/* Texte centré et animé */}
+    <div
+      ref={banner2Ref} // ref uniquement sur le texte
+      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center p-4"
+    >
+      <h1 className={`${goldText} ${titleClasses} animate-slideInFromBottom`}>
+        NOTRE SELECTION JUSQU'À -50% PAR STYLES
+      </h1>
+      <p className={`${goldText} ${subTitleClasses} animate-slideInFromBottom delay-200`}>
+        DÉCOUVREZ NOS MOBILIERS ICI
+      </p>
+    </div>
+  </div>
+
+      {/* FilterToggle et ProduitsList */}
       <div className="flex flex-col items-center py-16">
         <FilterToggle onChange={handleFilterChange} />
         {loading ? (
@@ -98,7 +110,7 @@ export default function HomePage() {
         )}
       </div>
 
-      {/* Bloc d'inspiration/storytelling */}
+      {/* Bloc inspiration */}
       <div className="text-center p-10">
         <p className={`underline decoration-1 ${taupeText} text-[1.5rem] pb-10 cursor-pointer hover:text-gray-900 transition-colors`}>
           Voir tous nos mobiliers
@@ -111,7 +123,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* Bloc d'engagement */}
+      {/* Bloc engagement */}
       <div className="text-center p-10 pb-20">
         <p className={`underline decoration-1 ${taupeText} text-[1.5rem] cursor-pointer hover:text-gray-900 transition-colors`}>
           Découvrez nos engagements
