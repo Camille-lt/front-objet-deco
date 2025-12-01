@@ -8,13 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* 🔥 CORRECTION : Pointer font-sans vers la variable de Nunito (définie dans layout.jsx) */
-  --font-sans: var(--font-nunito); 
-  
-  /* Laissez les autres variables si vous en avez besoin, mais elles ne seront pas utilisées par 'font-sans' */
+  --font-sans: var(--font-nunito);
   --font-heading: var(--font-inter);
-  --font-body: var(--font-playfair-display); 
+  --font-body: var(--font-playfair-display);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -25,14 +21,34 @@
   }
 }
 
-/* 🚨 RÈGLE FINALE : Forcer la police sur le body pour assurer l'héritage */
 body {
   background: var(--background);
   color: var(--foreground);
-  /* Applique la police --font-nunito partout où aucune autre classe n'est spécifiée */
-  font-family: var(--font-nunito), sans-serif; 
+  font-family: var(--font-nunito), sans-serif;
 }
 
 .text-taupe {
   color: #8A8781;
+}
+
+/* Animation slideInFromBottom rejouable */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe de base */
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.6s ease-out forwards;
+}
+
+/* Classe pour délai */
+.delay-200 {
+  animation-delay: 0.2s;
 }
