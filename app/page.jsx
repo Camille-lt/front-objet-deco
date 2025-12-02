@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import Button from "../component/button";
 import FilterToggle from "../component/FilterToggle";
-import ProduitsList from "../component/produitsList";
-import StylesList from "../component/StylesList";
+import ProduitsCarousel from "../component/produitsCarousel"; // Import en minusculeimport StylesList from "../component/StylesList";
 import { stylesData } from "../data/stylesData";
 import useInViewAnimation from '../hooks/useInViewAnimation';
 
@@ -106,8 +105,8 @@ export default function HomePage() {
         {loading ? (
           <p className="text-center mt-10">Chargement...</p>
         ) : (
-          <ProduitsList produits={produits} />
-        )}
+      <ProduitsCarousel produits={produits} />       
+      )}
       </div>
 
       {/* Bloc inspiration */}
