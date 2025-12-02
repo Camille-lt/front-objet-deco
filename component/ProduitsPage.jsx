@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import FilterToggle from "./FilterToggle";
-import ProduitsCarousel from "./ProduitsCarousel";
+import ProduitsCarousel from "./produitsCarousel";
+// PAGE ou conteneur des produits // 
 
 export default function ProduitsPage() {
   const [activeFilter, setActiveFilter] = useState("PRODUITS");
