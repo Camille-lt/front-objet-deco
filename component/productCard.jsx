@@ -1,15 +1,16 @@
 "use client";
+import AOS from 'aos';
+
 
 export default function ProductCard({ produit }) {
   return (
     <div
       className="
-        group
+        flex flex-col bg-white overflow-visible
         hover:shadow-lg transition-shadow duration-200
-        flex flex-col overflow-hidden
-        w-full min-h-[250px]
-        relative
-      "
+        group
+      " 
+      data-aos="fade-up"
     >
       {/* Image */}
       <div className="w-full h-[200px] overflow-hidden relative">
@@ -23,7 +24,7 @@ export default function ProductCard({ produit }) {
         <div
           className="
             absolute bottom-0 left-0 w-full
-            bg-black/40 text-white text-center
+            bg-black/60 text-white text-center
             py-2 text-sm font-semibold
             translate-y-full group-hover:translate-y-0
             transition-all duration-300
@@ -34,7 +35,7 @@ export default function ProductCard({ produit }) {
       </div>
 
       {/* Texte */}
-      <div className="p-3 pt-2 flex flex-col justify-between pb-10">
+      <div className="p-3 flex flex-col justify-between">
         <h3 className="text-lg font-extrabold truncate">{produit.nom}</h3>
         <p className="text-gray-500 text-xs line-clamp-2 h-8">
           {produit.description}
@@ -45,4 +46,4 @@ export default function ProductCard({ produit }) {
       </div>
     </div>
   );
-};
+}

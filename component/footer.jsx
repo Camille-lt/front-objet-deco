@@ -4,7 +4,7 @@ import { Truck, MessageCircleMore, UserRound, MailOpen, WalletCards  } from 'luc
 
 export default function Footer() {
     // Couleurs basées sur le thème
-    const bgColor = 'bg-[#F6F6F6]';
+    const bgColor = 'bg-[#D9D9D9]';
     const textColor = 'text-black'; 
     const linkClasses = `block text-sm hover:underline font-normal`;
 
@@ -96,12 +96,12 @@ export default function Footer() {
             </div>
 
             {/* 2. Ligne de Séparation Mentions Légales */}
-            <div className="mx-auto px-6 pt-4 border-t border-gray-300">
+            <div className="mx-auto px-6 pt-4 border-t border-gray-400">
                 <p className="text-xs text-gray-500">Mentions Légales</p>
             </div>
 
             {/* 3. Section Tout en bas (Copyright) */}
-            <div className="bg-[#F6F6F6] p-5 ">
+            <div className="bg-[#D9D9D9] p-5 ">
                 <div className="mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
                     <p className="font-bold text-sm text-gray-500 pb-5">HOME MAKING - 2025 © HOME MAKING - By Camille Lebigot</p>
 

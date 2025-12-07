@@ -31,13 +31,15 @@ export default function ProduitsCarousel({ produitsProp }) {
   if (error) return <p className="text-center mt-10 text-red-500">Erreur : {error}</p>;
 
   return (
-    <div className="w-full py-10 bg-white flex justify-center">
+    <div className="w-full py-10 flex justify-center">
       <div
-        className="w-[90%] max-w-[1400px] overflow-x-auto snap-x snap-mandatory flex gap-10 px-4 scroll-smooth"
+        className="w-[90%] max-w-[1400px] flex gap-6 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory pb-4"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {produits.map((p) => (
-          <ProductCard key={p.id} produit={p} />
+          <div key={p.id} className="shrink-0 snap-center">
+            <ProductCard produit={p} />
+          </div>
         ))}
       </div>
     </div>
