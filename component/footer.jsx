@@ -9,8 +9,7 @@ export default function Footer() {
     const linkClasses = `block text-sm hover:underline font-normal`;
 
     // Structure du bouton Newsletter
-    const newsletterButtonClasses = "bg-gray-800 text-white font-bold p-3 rounded-sm hover:bg-gray-700 transition-colors text-sm w-full";
-
+const newsletterButtonClasses = "bg-white border text-gray-400 font-bold p-3 rounded-sm hover:border hover:text-black transition-colors text-sm w-full";
     return (
         <footer className={`w-full ${bgColor} ${textColor} font-sans`}>
             
