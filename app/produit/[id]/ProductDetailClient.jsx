@@ -57,7 +57,7 @@ export default function ProductDetailClient({ product }) {
                         <img
                             src={product.image_url} // Utilise la prop 'product' réelle
                             alt={product.nom}
-                            className="w-full h-full object-cover rounded-lg shadow-xl"
+                            className="w-full h-full object-cover"
                             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x600/A0A0A0/FFFFFF?text=Image+Produit"; }}
                         />
                     </div>
@@ -73,16 +73,16 @@ export default function ProductDetailClient({ product }) {
 
                         {/* BLOC 3 : SERVICES STATIQUES (Description/Livraison/Retours) */}
                         {/* Ce bloc utilise des classes pour correspondre au style ProductHeader/CTA */}
-                        <div className="bg-white p-6 shadow-md border border-gray-100 rounded-lg space-y-3">
+                        <div className="bg-white p-6 space-y-3">
                             
                             {/* 1. Description & dimensions */}
-                            <div className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded-sm transition-colors border-b">
+                            <div className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2  transition-colors border-b">
                                 <span className="font-medium text-gray-800">Description & dimensions produit</span>
                                 <span className="text-xl text-gray-500">›</span>
                             </div>
 
                             {/* 2. Livraison rapide (Fictif) */}
-                            <div className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded-sm transition-colors border-b">
+                            <div className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 transition-colors border-b">
                                 <div className="flex items-center space-x-2">
                                     <span className="font-medium text-gray-800">🚚 Livraison rapide</span>
                                     <span className="text-xs text-gray-500">sous 3 à 10 jours ouvrés</span>

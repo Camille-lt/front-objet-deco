@@ -39,9 +39,13 @@ export default function ProductCard({ product, produit }) {
           src={image_url || "https://placehold.co/400x500?text=Mobilier"} 
           alt={nom} 
         />
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-             <span className="text-white font-bold text-xs uppercase tracking-widest border border-white p-2">Voir le détail</span>
-        </div>
+       {/* Bouton Hover (Style conservé) */}
+
+<div
+
+className="absolute bottom-0 left-0 w-full bg-black/60 text-white text-center py-2 text-sm font-semibold translate-y-full group-hover:translate-y-0 transition-all duration-300 ">
+VOIR LE PRODUIT
+</div>
       </div>
 
       {/* Contenu textuel */}

@@ -42,7 +42,7 @@ export default function ProduitsPage() {
       </div>
 
       {/* Titre */}
-      <h1 className="text-black text-5xl text-center font-extrabold mt-12">
+      <h1 className="text-[#565450] text-5xl text-center font-extrabold mt-12">
         Nos Mobiliers
       </h1>
 
