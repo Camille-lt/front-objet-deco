@@ -55,7 +55,7 @@ export default function Navbar() {
               {/* 🚨 CORRECTION SYNTAXE: Espace entre hover:text-[#E4B969] et transition-colors */}
               <li><Link href="/" className="hover:text-[#E4B969] transition-colors">ACCUEIL</Link></li>
               <li><Link href="/catalogue" className="hover:text-[#E4B969] transition-colors">CATALOGUE</Link></li>
-              <li><Link href="/inspirations" className="hover:text-[#E4B969] transition-colors">PRODUITS</Link></li>
+              <li><Link href="/produit" className="hover:text-[#E4B969] transition-colors">PRODUITS</Link></li>
               <li><Link href="/valeurs" className="hover:text-[#E4B969] transition-colors">NOS VALEURS</Link></li>
             </ul>
           )}
