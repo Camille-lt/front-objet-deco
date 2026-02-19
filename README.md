@@ -11,6 +11,9 @@ Interface utilisateur de **HOME MAKING**, une plateforme e-commerce dédiée au 
 * **Styling :** Tailwind CSS (ou CSS Modules selon ton choix)
 * **Gestion d'état :** Context API / Hooks
 * **Design :** Maquettage complet réalisé sur Figma
+* ## 🔌 Connexion API
+Ce projet est lié au dépôt Back-end qui gère la logique métier et la base de données :
+👉 [Lien vers le repo HOME MAKING - Back-end : https://github.com/Camille-lt/back-objet-deco ]
 
 ## ✨ Fonctionnalités
 * **Navigation Fluide :** Utilisation du routing Next.js.
