@@ -1,5 +1,5 @@
 <img width="1405" height="916" alt="Capture d’écran 2026-02-19 à 19 10 28" src="https://github.com/user-attachments/assets/dafc5815-438b-43f7-910b-38198432f15d" />
-<img width="1409" height="937" alt="Capture d’écran 2026-02-19 à 19 13 30" src="https://github.com/user-attachments/assets/cff91114-5621-4418-a2a7-ffa9c0f268db" />
+<img width="1454" height="935" alt="Capture d’écran 2026-02-20 à 19 52 42" src="https://github.com/user-attachments/assets/1ea0938c-ef3c-4bc3-9f9e-4a2374e397eb" />
 
 # 🛋️ HOME MAKING - Front-end
 
