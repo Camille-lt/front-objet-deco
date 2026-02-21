@@ -20,9 +20,9 @@ export default function Navbar() {
 
   return (
     // 🚨 CONVERSION TAILWIND 🚨
-    <nav
-      className="font-sans py-4 bg-[#F6F6F6] text-[#565450] shadow-sm"
-    >
+   <nav
+  className="font-sans py-4 bg-[#F6F6F6] text-[#565450] shadow-sm fixed top-0 right-0 left-0 z-50 w-full"
+>
       {/* 🔹 Structure principale : logo - menu - bouton (Centrée dans un conteneur) */}
       <div className="mx-auto flex items-center justify-between px-4 md:px-6">
         

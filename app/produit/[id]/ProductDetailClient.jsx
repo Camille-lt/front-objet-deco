@@ -50,7 +50,7 @@ export default function ProductDetailClient({ product }) {
             
             <div className="container mx-auto px-6 py-12">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-start lg:min-h-[70vh]">
+                <div className="grid grid-cols-1 mt-20 lg:grid-cols-2 gap-12 lg:items-start lg:min-h-[70vh]">
 
                     {/* 1. Bloc Image (Gauche) */}
                     <div className="w-full relative h-full">
